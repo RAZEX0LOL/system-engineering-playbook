@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ru" class="navy sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>(TEST) Test Report - System Testing Documentation - system-engineering-playbook</title>
+        <title>(ТЕСТ) Тестовый отчет - Документация системного тестирования - Руководство по системной инженерии</title>
 
 
         <!-- Custom HTML head -->
@@ -35,7 +35,7 @@
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "";
-            const default_light_theme = "light";
+            const default_light_theme = "navy";
             const default_dark_theme = "navy";
             window.path_to_searchindex_js = "searchindex.js";
         </script>
@@ -78,7 +78,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
-            html.classList.remove('light')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add("js");
         </script>
@@ -139,7 +139,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">system-engineering-playbook</h1>
+                    <h1 class="menu-title">Руководство по системной инженерии</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -176,314 +176,314 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="test-test-report---system-testing-documentation"><a class="header" href="#test-test-report---system-testing-documentation">(TEST) Test Report - System Testing Documentation</a></h1>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>This test report provides comprehensive documentation of system testing activities, including test scenarios, results, and visual representations of test data.</p>
+                        <h1 id="ТЕСТ-Тестовый-отчет---Документация-системного-тестирования"><a class="header" href="#ТЕСТ-Тестовый-отчет---Документация-системного-тестирования">(ТЕСТ) Тестовый отчет - Документация системного тестирования</a></h1>
+<h2 id="Обзор"><a class="header" href="#Обзор">Обзор</a></h2>
+<p>Данный тестовый отчет предоставляет комплексную документацию по активностям системного тестирования, включая тестовые сценарии, результаты и визуальное представление тестовых данных.</p>
 <hr />
-<h2 id="test-environment"><a class="header" href="#test-environment">Test Environment</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Value</th></tr></thead><tbody>
-<tr><td>Test Environment</td><td>Staging</td></tr>
-<tr><td>Test Date</td><td>October 19, 2025</td></tr>
-<tr><td>Tester</td><td>QA Team</td></tr>
-<tr><td>System Version</td><td>v2.3.1</td></tr>
-<tr><td>Database Version</td><td>PostgreSQL 15.2</td></tr>
+<h2 id="Схема-выполнения-тестов"><a class="header" href="#Схема-выполнения-тестов">Схема выполнения тестов</a></h2>
+<p>Диаграмма ниже иллюстрирует полный процесс выполнения тестов от начала до конца:</p>
+<p>@drawio{diagrams/test-flow.drawio}</p>
+<hr />
+<h2 id="Тестовое-окружение"><a class="header" href="#Тестовое-окружение">Тестовое окружение</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody>
+<tr><td>Тестовое окружение</td><td>Staging</td></tr>
+<tr><td>Дата тестирования</td><td>19 октября 2025</td></tr>
+<tr><td>Тестировщик</td><td>Команда QA</td></tr>
+<tr><td>Версия системы</td><td>v2.3.1</td></tr>
+<tr><td>Версия БД</td><td>PostgreSQL 15.2</td></tr>
 </tbody></table>
 </div>
 <hr />
-<h2 id="test-execution-flow"><a class="header" href="#test-execution-flow">Test Execution Flow</a></h2>
-<p>The diagram below illustrates the complete test execution workflow from start to finish:</p>
-<p>@drawio{diagrams/test-flow.drawio}</p>
-<hr />
-<h2 id="test-coverage-summary"><a class="header" href="#test-coverage-summary">Test Coverage Summary</a></h2>
-<h3 id="overall-test-statistics"><a class="header" href="#overall-test-statistics">Overall Test Statistics</a></h3>
-<p><img src="../img/img.png" alt="Test Coverage Statistics" /></p>
-<p><strong>Key Metrics:</strong></p>
+<h2 id="Сводка-по-покрытию-тестами"><a class="header" href="#Сводка-по-покрытию-тестами">Сводка по покрытию тестами</a></h2>
+<h3 id="Общая-статистика-тестирования"><a class="header" href="#Общая-статистика-тестирования">Общая статистика тестирования</a></h3>
+<p><img src="../img/img.png" alt="Статистика покрытия тестами" /></p>
+<p><strong>Ключевые метрики:</strong></p>
 <ul>
-<li>Total Test Cases: 156</li>
-<li>Passed: 142 (91%)</li>
-<li>Failed: 8 (5%)</li>
-<li>Blocked: 6 (4%)</li>
-<li>Test Coverage: 87%</li>
+<li>Всего тест-кейсов: 156</li>
+<li>Пройдено: 142 (91%)</li>
+<li>Провалено: 8 (5%)</li>
+<li>Заблокировано: 6 (4%)</li>
+<li>Покрытие тестами: 87%</li>
 </ul>
 <hr />
-<h2 id="functional-testing-results"><a class="header" href="#functional-testing-results">Functional Testing Results</a></h2>
-<h3 id="1-user-authentication-module"><a class="header" href="#1-user-authentication-module">1. User Authentication Module</a></h3>
-<p><strong>Test Cases Executed:</strong> 24</p>
-<p><img src="../img/img1.png" alt="Authentication Test Flow" /></p>
-<h4 id="test-results"><a class="header" href="#test-results">Test Results:</a></h4>
+<h2 id="Результаты-функционального-тестирования"><a class="header" href="#Результаты-функционального-тестирования">Результаты функционального тестирования</a></h2>
+<h3 id="1-Модуль-аутентификации-пользователей"><a class="header" href="#1-Модуль-аутентификации-пользователей">1. Модуль аутентификации пользователей</a></h3>
+<p><strong>Выполнено тест-кейсов:</strong> 24</p>
+<p><img src="../img/img1.png" alt="Поток тестирования аутентификации" /></p>
+<h4 id="Результаты-тестирования"><a class="header" href="#Результаты-тестирования">Результаты тестирования:</a></h4>
 <ul>
-<li>✅ Login with valid credentials: <strong>PASSED</strong></li>
-<li>✅ Login with invalid credentials: <strong>PASSED</strong></li>
-<li>✅ Password reset functionality: <strong>PASSED</strong></li>
-<li>✅ Two-factor authentication: <strong>PASSED</strong></li>
-<li>✅ Session timeout handling: <strong>PASSED</strong></li>
-<li>❌ OAuth integration (Google): <strong>FAILED</strong> - Token refresh issue</li>
-<li>✅ Role-based access control: <strong>PASSED</strong></li>
+<li>✅ Вход с корректными учетными данными: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Вход с некорректными учетными данными: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Функционал восстановления пароля: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Двухфакторная аутентификация: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Обработка истечения сессии: <strong>ПРОЙДЕН</strong></li>
+<li>❌ OAuth интеграция (Google): <strong>ПРОВАЛЕН</strong> - Проблема с обновлением токена</li>
+<li>✅ Контроль доступа на основе ролей: <strong>ПРОЙДЕН</strong></li>
 </ul>
-<p><strong>Issues Found:</strong></p>
+<p><strong>Обнаруженные проблемы:</strong></p>
 <ul>
-<li>Bug #1247: OAuth token refresh fails after 30 minutes</li>
-<li>Enhancement #1248: Add biometric authentication support</li>
+<li>Баг #1247: Ошибка обновления OAuth токена через 30 минут</li>
+<li>Улучшение #1248: Добавить поддержку биометрической аутентификации</li>
 </ul>
 <hr />
-<h3 id="2-data-processing-pipeline"><a class="header" href="#2-data-processing-pipeline">2. Data Processing Pipeline</a></h3>
-<p><strong>Test Cases Executed:</strong> 42</p>
-<p><img src="../img/img2.png" alt="Data Pipeline Architecture" /></p>
-<h4 id="test-results-1"><a class="header" href="#test-results-1">Test Results:</a></h4>
+<h3 id="2-Конвейер-обработки-данных"><a class="header" href="#2-Конвейер-обработки-данных">2. Конвейер обработки данных</a></h3>
+<p><strong>Выполнено тест-кейсов:</strong> 42</p>
+<p><img src="../img/img2.png" alt="Архитектура конвейера данных" /></p>
+<h4 id="Результаты-тестирования-1"><a class="header" href="#Результаты-тестирования-1">Результаты тестирования:</a></h4>
 <ul>
-<li>✅ Data ingestion from multiple sources: <strong>PASSED</strong></li>
-<li>✅ Data transformation and validation: <strong>PASSED</strong></li>
-<li>✅ Error handling and retry mechanism: <strong>PASSED</strong></li>
-<li>✅ Performance under load (1000 req/sec): <strong>PASSED</strong></li>
-<li>❌ Large file processing (&gt;5GB): <strong>FAILED</strong> - Memory overflow</li>
-<li>✅ Data consistency checks: <strong>PASSED</strong></li>
+<li>✅ Получение данных из множественных источников: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Трансформация и валидация данных: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Обработка ошибок и механизм повторных попыток: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Производительность под нагрузкой (1000 запр/сек): <strong>ПРОЙДЕН</strong></li>
+<li>❌ Обработка больших файлов (&gt;5ГБ): <strong>ПРОВАЛЕН</strong> - Переполнение памяти</li>
+<li>✅ Проверка консистентности данных: <strong>ПРОЙДЕН</strong></li>
 </ul>
-<p><strong>Performance Metrics:</strong></p>
-<pre><code>Average Processing Time: 245ms
-Peak Memory Usage: 4.2GB
-Throughput: 850 records/sec
-Error Rate: 0.3%
+<p><strong>Метрики производительности:</strong></p>
+<pre><code>Среднее время обработки: 245мс
+Пиковое использование памяти: 4.2ГБ
+Пропускная способность: 850 записей/сек
+Процент ошибок: 0.3%
 </code></pre>
 <hr />
-<h3 id="3-api-integration-testing"><a class="header" href="#3-api-integration-testing">3. API Integration Testing</a></h3>
-<p><strong>Test Cases Executed:</strong> 38</p>
-<p><img src="../img/img3.png" alt="API Test Coverage" /></p>
-<h4 id="rest-api-endpoints"><a class="header" href="#rest-api-endpoints">REST API Endpoints:</a></h4>
+<h3 id="3-Тестирование-интеграции-api"><a class="header" href="#3-Тестирование-интеграции-api">3. Тестирование интеграции API</a></h3>
+<p><strong>Выполнено тест-кейсов:</strong> 38</p>
+<p><img src="../img/img3.png" alt="Покрытие тестами API" /></p>
+<h4 id="rest-api-эндпоинты"><a class="header" href="#rest-api-эндпоинты">REST API эндпоинты:</a></h4>
 <ul>
-<li>✅ GET /api/v1/users: <strong>PASSED</strong></li>
-<li>✅ POST /api/v1/users: <strong>PASSED</strong></li>
-<li>✅ PUT /api/v1/users/{id}: <strong>PASSED</strong></li>
-<li>✅ DELETE /api/v1/users/{id}: <strong>PASSED</strong></li>
-<li>✅ GET /api/v1/reports: <strong>PASSED</strong></li>
-<li>❌ POST /api/v1/reports/export: <strong>FAILED</strong> - Timeout on large datasets</li>
-<li>✅ Response time &lt; 200ms: <strong>PASSED</strong></li>
+<li>✅ GET /api/v1/users: <strong>ПРОЙДЕН</strong></li>
+<li>✅ POST /api/v1/users: <strong>ПРОЙДЕН</strong></li>
+<li>✅ PUT /api/v1/users/{id}: <strong>ПРОЙДЕН</strong></li>
+<li>✅ DELETE /api/v1/users/{id}: <strong>ПРОЙДЕН</strong></li>
+<li>✅ GET /api/v1/reports: <strong>ПРОЙДЕН</strong></li>
+<li>❌ POST /api/v1/reports/export: <strong>ПРОВАЛЕН</strong> - Таймаут на больших наборах данных</li>
+<li>✅ Время отклика &lt; 200мс: <strong>ПРОЙДЕН</strong></li>
 </ul>
-<p><strong>API Performance:</strong></p>
+<p><strong>Производительность API:</strong></p>
 <pre><code class="language-json">{
-  "average_response_time": "156ms",
-  "p95_response_time": "320ms",
-  "p99_response_time": "450ms",
-  "error_rate": "0.2%",
-  "requests_per_second": 1250
+  "среднее_время_отклика": "156мс",
+  "p95_время_отклика": "320мс",
+  "p99_время_отклика": "450мс",
+  "процент_ошибок": "0.2%",
+  "запросов_в_секунду": 1250
 }
 </code></pre>
 <hr />
-<h2 id="performance-testing"><a class="header" href="#performance-testing">Performance Testing</a></h2>
-<h3 id="load-testing-results"><a class="header" href="#load-testing-results">Load Testing Results</a></h3>
-<p><img src="../img/img4.png" alt="Load Testing Metrics" /></p>
-<p><strong>Test Configuration:</strong></p>
+<h2 id="Нагрузочное-тестирование"><a class="header" href="#Нагрузочное-тестирование">Нагрузочное тестирование</a></h2>
+<h3 id="Результаты-нагрузочного-тестирования"><a class="header" href="#Результаты-нагрузочного-тестирования">Результаты нагрузочного тестирования</a></h3>
+<p><img src="../img/img4.png" alt="Метрики нагрузочного тестирования" /></p>
+<p><strong>Конфигурация теста:</strong></p>
 <ul>
-<li>Duration: 2 hours</li>
-<li>Concurrent Users: 500 → 5000 (gradual ramp-up)</li>
-<li>Total Requests: 2,450,000</li>
+<li>Длительность: 2 часа</li>
+<li>Одновременные пользователи: 500 → 5000 (постепенное увеличение)</li>
+<li>Всего запросов: 2,450,000</li>
 </ul>
-<p><strong>Results:</strong></p>
-<div class="table-wrapper"><table><thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>Status</th></tr></thead><tbody>
-<tr><td>Response Time (avg)</td><td>&lt; 300ms</td><td>245ms</td><td>✅ PASS</td></tr>
-<tr><td>Response Time (p95)</td><td>&lt; 500ms</td><td>420ms</td><td>✅ PASS</td></tr>
-<tr><td>Error Rate</td><td>&lt; 1%</td><td>0.3%</td><td>✅ PASS</td></tr>
-<tr><td>Throughput</td><td>&gt; 1000 req/s</td><td>1250 req/s</td><td>✅ PASS</td></tr>
-<tr><td>CPU Usage</td><td>&lt; 80%</td><td>68%</td><td>✅ PASS</td></tr>
-<tr><td>Memory Usage</td><td>&lt; 85%</td><td>72%</td><td>✅ PASS</td></tr>
+<p><strong>Результаты:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Метрика</th><th>Цель</th><th>Фактически</th><th>Статус</th></tr></thead><tbody>
+<tr><td>Время отклика (среднее)</td><td>&lt; 300мс</td><td>245мс</td><td>✅ ПРОЙДЕН</td></tr>
+<tr><td>Время отклика (p95)</td><td>&lt; 500мс</td><td>420мс</td><td>✅ ПРОЙДЕН</td></tr>
+<tr><td>Процент ошибок</td><td>&lt; 1%</td><td>0.3%</td><td>✅ ПРОЙДЕН</td></tr>
+<tr><td>Пропускная способность</td><td>&gt; 1000 запр/с</td><td>1250 запр/с</td><td>✅ ПРОЙДЕН</td></tr>
+<tr><td>Использование CPU</td><td>&lt; 80%</td><td>68%</td><td>✅ ПРОЙДЕН</td></tr>
+<tr><td>Использование памяти</td><td>&lt; 85%</td><td>72%</td><td>✅ ПРОЙДЕН</td></tr>
 </tbody></table>
 </div>
 <hr />
-<h3 id="stress-testing-results"><a class="header" href="#stress-testing-results">Stress Testing Results</a></h3>
-<p><img src="../img/img5.png" alt="Stress Testing Results" /></p>
-<p><strong>Breaking Point Analysis:</strong></p>
+<h3 id="Результаты-стресс-тестирования"><a class="header" href="#Результаты-стресс-тестирования">Результаты стресс-тестирования</a></h3>
+<p><img src="../img/img5.png" alt="Результаты стресс-тестирования" /></p>
+<p><strong>Анализ точки отказа:</strong></p>
 <ul>
-<li>System remained stable up to 8,000 concurrent users</li>
-<li>Response degradation started at 9,500 users</li>
-<li>System failure occurred at 12,000 concurrent users</li>
+<li>Система оставалась стабильной до 8,000 одновременных пользователей</li>
+<li>Деградация отклика началась при 9,500 пользователях</li>
+<li>Отказ системы произошел при 12,000 одновременных пользователях</li>
 </ul>
-<p><strong>Recommendations:</strong></p>
+<p><strong>Рекомендации:</strong></p>
 <ol>
-<li>Implement horizontal scaling for user loads &gt; 8,000</li>
-<li>Optimize database connection pooling</li>
-<li>Add caching layer for frequently accessed data</li>
+<li>Внедрить горизонтальное масштабирование для нагрузки &gt; 8,000 пользователей</li>
+<li>Оптимизировать пулинг соединений с БД</li>
+<li>Добавить слой кеширования для часто запрашиваемых данных</li>
 </ol>
 <hr />
-<h2 id="security-testing"><a class="header" href="#security-testing">Security Testing</a></h2>
-<h3 id="vulnerability-assessment"><a class="header" href="#vulnerability-assessment">Vulnerability Assessment</a></h3>
-<p><img src="../img/img6.png" alt="Security Test Results" /></p>
-<p><strong>Security Tests Performed:</strong></p>
+<h2 id="Тестирование-безопасности"><a class="header" href="#Тестирование-безопасности">Тестирование безопасности</a></h2>
+<h3 id="Оценка-уязвимостей"><a class="header" href="#Оценка-уязвимостей">Оценка уязвимостей</a></h3>
+<p><img src="../img/img6.png" alt="Результаты тестирования безопасности" /></p>
+<p><strong>Выполненные тесты безопасности:</strong></p>
 <ul>
-<li>✅ SQL Injection testing: <strong>PASSED</strong> - No vulnerabilities found</li>
-<li>✅ XSS (Cross-Site Scripting): <strong>PASSED</strong> - Input sanitization working</li>
-<li>✅ CSRF protection: <strong>PASSED</strong> - Tokens properly implemented</li>
-<li>✅ Authentication bypass attempts: <strong>PASSED</strong> - All blocked</li>
-<li>⚠️ Rate limiting: <strong>PARTIAL</strong> - Needs stricter limits on login endpoint</li>
-<li>✅ Data encryption (in transit): <strong>PASSED</strong> - TLS 1.3</li>
-<li>✅ Data encryption (at rest): <strong>PASSED</strong> - AES-256</li>
+<li>✅ Тестирование SQL инъекций: <strong>ПРОЙДЕН</strong> - Уязвимостей не обнаружено</li>
+<li>✅ XSS (Межсайтовый скриптинг): <strong>ПРОЙДЕН</strong> - Санитизация работает</li>
+<li>✅ CSRF защита: <strong>ПРОЙДЕН</strong> - Токены корректно реализованы</li>
+<li>✅ Попытки обхода аутентификации: <strong>ПРОЙДЕН</strong> - Все заблокированы</li>
+<li>⚠️ Ограничение частоты запросов: <strong>ЧАСТИЧНО</strong> - Требуются более строгие лимиты на эндпоинт входа</li>
+<li>✅ Шифрование данных (при передаче): <strong>ПРОЙДЕН</strong> - TLS 1.3</li>
+<li>✅ Шифрование данных (в покое): <strong>ПРОЙДЕН</strong> - AES-256</li>
 </ul>
-<p><strong>Security Score:</strong> 95/100</p>
+<p><strong>Оценка безопасности:</strong> 95/100</p>
 <hr />
-<h2 id="integration-testing"><a class="header" href="#integration-testing">Integration Testing</a></h2>
-<h3 id="system-architecture-test-flow"><a class="header" href="#system-architecture-test-flow">System Architecture Test Flow</a></h3>
-<p>The following diagram illustrates the complete integration test flow across all system components:</p>
-<p><strong>Component Integration:</strong></p>
+<h2 id="Интеграционное-тестирование"><a class="header" href="#Интеграционное-тестирование">Интеграционное тестирование</a></h2>
+<h3 id="Схема-тестирования-системной-архитектуры"><a class="header" href="#Схема-тестирования-системной-архитектуры">Схема тестирования системной архитектуры</a></h3>
+<p>Следующая диаграмма иллюстрирует полный поток интеграционных тестов всех системных компонентов:</p>
+<p><strong>Интеграция компонентов:</strong></p>
 <ol>
 <li>Frontend ↔ API Gateway</li>
-<li>API Gateway ↔ Microservices</li>
-<li>Microservices ↔ Database Layer</li>
-<li>Message Queue Integration</li>
-<li>External Service Integration</li>
+<li>API Gateway ↔ Микросервисы</li>
+<li>Микросервисы ↔ Слой базы данных</li>
+<li>Интеграция очереди сообщений</li>
+<li>Интеграция внешних сервисов</li>
 </ol>
-<p><strong>Integration Test Results:</strong></p>
+<p><strong>Результаты интеграционного тестирования:</strong></p>
 <ul>
-<li>✅ End-to-end user workflow: <strong>PASSED</strong></li>
-<li>✅ Inter-service communication: <strong>PASSED</strong></li>
-<li>✅ Database transaction handling: <strong>PASSED</strong></li>
-<li>✅ Message queue reliability: <strong>PASSED</strong></li>
-<li>❌ Third-party API timeout handling: <strong>FAILED</strong> - Needs circuit breaker</li>
+<li>✅ Сквозной пользовательский workflow: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Взаимодействие между сервисами: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Обработка транзакций БД: <strong>ПРОЙДЕН</strong></li>
+<li>✅ Надежность очереди сообщений: <strong>ПРОЙДЕН</strong></li>
+<li>❌ Обработка таймаутов сторонних API: <strong>ПРОВАЛЕН</strong> - Требуется circuit breaker</li>
 </ul>
 <hr />
-<h2 id="regression-testing"><a class="header" href="#regression-testing">Regression Testing</a></h2>
-<p><strong>Test Suite:</strong> Full Regression Suite (125 test cases)</p>
-<p><strong>Results:</strong></p>
+<h2 id="Регрессионное-тестирование"><a class="header" href="#Регрессионное-тестирование">Регрессионное тестирование</a></h2>
+<p><strong>Набор тестов:</strong> Полный набор регрессионных тестов (125 тест-кейсов)</p>
+<p><strong>Результаты:</strong></p>
 <ul>
-<li>Passed: 119 (95%)</li>
-<li>Failed: 3 (2.4%)</li>
-<li>Blocked: 3 (2.4%)</li>
+<li>Пройдено: 119 (95%)</li>
+<li>Провалено: 3 (2.4%)</li>
+<li>Заблокировано: 3 (2.4%)</li>
 </ul>
-<p><strong>Failed Test Cases:</strong></p>
+<p><strong>Проваленные тест-кейсы:</strong></p>
 <ol>
-<li><strong>TC-REG-045</strong>: User profile image upload fails for images &gt; 10MB</li>
-<li><strong>TC-REG-078</strong>: Export functionality timeout for reports with &gt; 100k rows</li>
-<li><strong>TC-REG-112</strong>: Email notification delay for bulk operations</li>
+<li><strong>TC-REG-045</strong>: Загрузка изображения профиля падает для изображений &gt; 10МБ</li>
+<li><strong>TC-REG-078</strong>: Таймаут функционала экспорта для отчетов с &gt; 100к строк</li>
+<li><strong>TC-REG-112</strong>: Задержка email уведомлений для массовых операций</li>
 </ol>
 <hr />
-<h2 id="browser-compatibility-testing"><a class="header" href="#browser-compatibility-testing">Browser Compatibility Testing</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Browser</th><th>Version</th><th>Status</th><th>Issues</th></tr></thead><tbody>
-<tr><td>Chrome</td><td>118+</td><td>✅ PASS</td><td>None</td></tr>
-<tr><td>Firefox</td><td>119+</td><td>✅ PASS</td><td>None</td></tr>
-<tr><td>Safari</td><td>16+</td><td>✅ PASS</td><td>Minor CSS rendering</td></tr>
-<tr><td>Edge</td><td>118+</td><td>✅ PASS</td><td>None</td></tr>
-<tr><td>Opera</td><td>104+</td><td>✅ PASS</td><td>None</td></tr>
+<h2 id="Тестирование-совместимости-с-браузерами"><a class="header" href="#Тестирование-совместимости-с-браузерами">Тестирование совместимости с браузерами</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Браузер</th><th>Версия</th><th>Статус</th><th>Проблемы</th></tr></thead><tbody>
+<tr><td>Chrome</td><td>118+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
+<tr><td>Firefox</td><td>119+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
+<tr><td>Safari</td><td>16+</td><td>✅ ПРОЙДЕН</td><td>Мелкие проблемы с CSS</td></tr>
+<tr><td>Edge</td><td>118+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
+<tr><td>Opera</td><td>104+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
 </tbody></table>
 </div>
 <hr />
-<h2 id="mobile-responsiveness-testing"><a class="header" href="#mobile-responsiveness-testing">Mobile Responsiveness Testing</a></h2>
-<p><strong>Devices Tested:</strong></p>
+<h2 id="Тестирование-мобильной-адаптивности"><a class="header" href="#Тестирование-мобильной-адаптивности">Тестирование мобильной адаптивности</a></h2>
+<p><strong>Протестированные устройства:</strong></p>
 <ul>
-<li>iPhone 14 Pro (iOS 17.1) - ✅ PASS</li>
-<li>Samsung Galaxy S23 (Android 14) - ✅ PASS</li>
-<li>iPad Pro 12.9" (iOS 17.1) - ✅ PASS</li>
-<li>Google Pixel 8 (Android 14) - ✅ PASS</li>
+<li>iPhone 14 Pro (iOS 17.1) - ✅ ПРОЙДЕН</li>
+<li>Samsung Galaxy S23 (Android 14) - ✅ ПРОЙДЕН</li>
+<li>iPad Pro 12.9" (iOS 17.1) - ✅ ПРОЙДЕН</li>
+<li>Google Pixel 8 (Android 14) - ✅ ПРОЙДЕН</li>
 </ul>
 <hr />
-<h2 id="known-issues"><a class="header" href="#known-issues">Known Issues</a></h2>
-<h3 id="critical-issues"><a class="header" href="#critical-issues">Critical Issues</a></h3>
+<h2 id="Известные-проблемы"><a class="header" href="#Известные-проблемы">Известные проблемы</a></h2>
+<h3 id="Критические-проблемы"><a class="header" href="#Критические-проблемы">Критические проблемы</a></h3>
 <ol>
 <li>
-<p><strong>BUG-1247</strong>: OAuth token refresh failure</p>
+<p><strong>БАГ-1247</strong>: Ошибка обновления OAuth токена</p>
 <ul>
-<li><strong>Priority:</strong> High</li>
-<li><strong>Assigned to:</strong> Backend Team</li>
-<li><strong>ETA:</strong> October 25, 2025</li>
+<li><strong>Приоритет:</strong> Высокий</li>
+<li><strong>Назначено:</strong> Backend команде</li>
+<li><strong>Срок:</strong> 25 октября 2025</li>
 </ul>
 </li>
 <li>
-<p><strong>BUG-1249</strong>: Memory overflow on large file processing</p>
+<p><strong>БАГ-1249</strong>: Переполнение памяти при обработке больших файлов</p>
 <ul>
-<li><strong>Priority:</strong> High</li>
-<li><strong>Assigned to:</strong> Data Team</li>
-<li><strong>ETA:</strong> October 28, 2025</li>
+<li><strong>Приоритет:</strong> Высокий</li>
+<li><strong>Назначено:</strong> Команде данных</li>
+<li><strong>Срок:</strong> 28 октября 2025</li>
 </ul>
 </li>
 </ol>
-<h3 id="medium-priority-issues"><a class="header" href="#medium-priority-issues">Medium Priority Issues</a></h3>
+<h3 id="Проблемы-среднего-приоритета"><a class="header" href="#Проблемы-среднего-приоритета">Проблемы среднего приоритета</a></h3>
 <ol>
-<li><strong>BUG-1248</strong>: Rate limiting needs improvement</li>
-<li><strong>BUG-1250</strong>: Export timeout on large datasets</li>
-<li><strong>BUG-1251</strong>: Circuit breaker needed for third-party APIs</li>
+<li><strong>БАГ-1248</strong>: Требуется улучшение ограничения частоты запросов</li>
+<li><strong>БАГ-1250</strong>: Таймаут экспорта на больших наборах данных</li>
+<li><strong>БАГ-1251</strong>: Требуется circuit breaker для сторонних API</li>
 </ol>
 <hr />
-<h2 id="recommendations"><a class="header" href="#recommendations">Recommendations</a></h2>
+<h2 id="Рекомендации"><a class="header" href="#Рекомендации">Рекомендации</a></h2>
 <ol>
 <li>
-<p><strong>Performance Optimization:</strong></p>
+<p><strong>Оптимизация производительности:</strong></p>
 <ul>
-<li>Implement Redis caching for frequently accessed data</li>
-<li>Optimize database queries with proper indexing</li>
-<li>Enable HTTP/2 for better performance</li>
+<li>Внедрить Redis кеширование для часто запрашиваемых данных</li>
+<li>Оптимизировать запросы к БД с правильными индексами</li>
+<li>Включить HTTP/2 для лучшей производительности</li>
 </ul>
 </li>
 <li>
-<p><strong>Scalability:</strong></p>
+<p><strong>Масштабируемость:</strong></p>
 <ul>
-<li>Implement horizontal pod autoscaling</li>
-<li>Add load balancing for microservices</li>
-<li>Set up CDN for static assets</li>
+<li>Внедрить автомасштабирование подов</li>
+<li>Добавить балансировку нагрузки для микросервисов</li>
+<li>Настроить CDN для статических ресурсов</li>
 </ul>
 </li>
 <li>
-<p><strong>Security:</strong></p>
+<p><strong>Безопасность:</strong></p>
 <ul>
-<li>Strengthen rate limiting on authentication endpoints</li>
-<li>Implement Web Application Firewall (WAF)</li>
-<li>Regular security audits and penetration testing</li>
+<li>Усилить ограничение частоты запросов на эндпоинтах аутентификации</li>
+<li>Внедрить Web Application Firewall (WAF)</li>
+<li>Регулярные аудиты безопасности и пентесты</li>
 </ul>
 </li>
 <li>
-<p><strong>Monitoring:</strong></p>
+<p><strong>Мониторинг:</strong></p>
 <ul>
-<li>Enhance application monitoring with distributed tracing</li>
-<li>Set up real-time alerts for critical metrics</li>
-<li>Implement log aggregation and analysis</li>
+<li>Улучшить мониторинг приложения с распределенной трассировкой</li>
+<li>Настроить оповещения в реальном времени для критических метрик</li>
+<li>Внедрить агрегацию и анализ логов</li>
 </ul>
 </li>
 </ol>
 <hr />
-<h2 id="test-automation-status"><a class="header" href="#test-automation-status">Test Automation Status</a></h2>
-<p><strong>Automated Tests:</strong> 142/156 (91%)</p>
-<p><strong>Automation Framework:</strong></p>
+<h2 id="Статус-автоматизации-тестов"><a class="header" href="#Статус-автоматизации-тестов">Статус автоматизации тестов</a></h2>
+<p><strong>Автоматизированные тесты:</strong> 142/156 (91%)</p>
+<p><strong>Фреймворк автоматизации:</strong></p>
 <ul>
-<li>Unit Tests: Jest + Mocha</li>
-<li>Integration Tests: Supertest</li>
-<li>E2E Tests: Cypress + Playwright</li>
-<li>Performance Tests: K6 + JMeter</li>
+<li>Модульные тесты: Jest + Mocha</li>
+<li>Интеграционные тесты: Supertest</li>
+<li>E2E тесты: Cypress + Playwright</li>
+<li>Нагрузочные тесты: K6 + JMeter</li>
 </ul>
-<p><strong>CI/CD Integration:</strong></p>
+<p><strong>Интеграция CI/CD:</strong></p>
 <ul>
-<li>✅ Automated test execution on every commit</li>
-<li>✅ Automated deployment to staging on PR merge</li>
-<li>✅ Automated rollback on test failures</li>
-<li>✅ Performance regression detection</li>
-</ul>
-<hr />
-<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>The system has demonstrated <strong>strong overall stability</strong> with a 91% pass rate across all test categories. While there are some issues that require attention (particularly OAuth integration and large file processing), the core functionality meets the acceptance criteria.</p>
-<p><strong>Overall Test Status:</strong> ✅ <strong>READY FOR PRODUCTION</strong> (with noted caveats)</p>
-<p><strong>Sign-off:</strong></p>
-<ul>
-<li>QA Lead: _________________ Date: __________</li>
-<li>Dev Lead: _________________ Date: __________</li>
-<li>Product Owner: ____________ Date: __________</li>
+<li>✅ Автоматическое выполнение тестов при каждом коммите</li>
+<li>✅ Автоматический деплой в staging при мердже PR</li>
+<li>✅ Автоматический откат при провале тестов</li>
+<li>✅ Обнаружение регрессии производительности</li>
 </ul>
 <hr />
-<h2 id="appendix"><a class="header" href="#appendix">Appendix</a></h2>
-<h3 id="test-data"><a class="header" href="#test-data">Test Data</a></h3>
-<p><strong>Sample Test Users:</strong></p>
+<h2 id="Заключение"><a class="header" href="#Заключение">Заключение</a></h2>
+<p>Система продемонстрировала <strong>высокую общую стабильность</strong> с уровнем прохождения тестов 91% по всем категориям. Хотя есть несколько проблем, требующих внимания (в частности OAuth интеграция и обработка больших файлов), основной функционал соответствует критериям приемки.</p>
+<p><strong>Общий статус тестирования:</strong> ✅ <strong>ГОТОВО К ПРОДАКШЕНУ</strong> (с отмеченными оговорками)</p>
+<p><strong>Подтверждение:</strong></p>
+<ul>
+<li>Руководитель QA: _________________ Дата: __________</li>
+<li>Руководитель разработки: _________________ Дата: __________</li>
+<li>Владелец продукта: ____________ Дата: __________</li>
+</ul>
+<hr />
+<h2 id="Приложение"><a class="header" href="#Приложение">Приложение</a></h2>
+<h3 id="Тестовые-данные"><a class="header" href="#Тестовые-данные">Тестовые данные</a></h3>
+<p><strong>Примеры тестовых пользователей:</strong></p>
 <ul>
 <li>test_user_001@example.com</li>
 <li>test_admin_001@example.com</li>
 <li>test_viewer_001@example.com</li>
 </ul>
-<p><strong>Test Database:</strong></p>
+<p><strong>Тестовая база данных:</strong></p>
 <ul>
-<li>Name: test_db_staging</li>
-<li>Records: 1,000,000+</li>
-<li>Size: 12.5 GB</li>
+<li>Имя: test_db_staging</li>
+<li>Записей: 1,000,000+</li>
+<li>Размер: 12.5 ГБ</li>
 </ul>
-<p><strong>Test Environments:</strong></p>
+<p><strong>Тестовые окружения:</strong></p>
 <ul>
 <li>Staging: https://staging.example.com</li>
 <li>QA: https://qa.example.com</li>
 <li>Performance: https://perf.example.com</li>
 </ul>
 <hr />
-<p><em>This is a test report generated for demonstration purposes.</em></p>
+<p><em>Это тестовый отчет, созданный в демонстрационных целях.</em></p>
 
                     </main>
 
