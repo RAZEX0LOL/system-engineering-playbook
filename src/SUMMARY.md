@@ -1,6 +1,6 @@
-# Summary
+# Содержание
 
 - [Конфигурация проекта](./md.md)
 - [Пример использования Drawio](./drawio.md)
 - [Пример использования Swagger](./swagger.md)
-- [(TEST) Test Report - System Testing Documentation](./test-report.md)
+- [(ТЕСТ) Тестовый отчет - Документация системного тестирования](./test-report.md)
