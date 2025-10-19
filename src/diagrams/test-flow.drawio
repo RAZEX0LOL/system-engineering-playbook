@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="26.0.14">
+  <diagram name="Test Flow Diagram" id="TestFlowDiagram">
+    <mxGraphModel dx="1575" dy="862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Start Node -->
+        <mxCell id="start" value="Test Execution Start" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Unit Tests -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="start" target="unit-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="unit-tests" value="Unit Tests&#xa;(142 test cases)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="140" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Integration Tests -->
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="unit-tests" target="integration-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="integration-tests" value="Integration Tests&#xa;(38 test cases)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Functional Tests -->
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="integration-tests" target="functional-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="functional-tests" value="Functional Tests&#xa;(104 test cases)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="340" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Performance Tests -->
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="functional-tests" target="performance-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="performance-tests" value="Performance Tests&#xa;Load &amp; Stress Testing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Security Tests -->
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="performance-tests" target="security-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="security-tests" value="Security Tests&#xa;Vulnerability Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="320" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Point -->
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="security-tests" target="decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="All Tests Passed?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="640" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Success Path -->
+        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="decision" target="success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="success" value="Generate Report&#xa;Deploy to Production" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="560" y="650" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Failure Path -->
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="decision" target="failure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="failure" value="Bug Fixing&#xa;Re-run Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="80" y="650" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Loop back -->
+        <mxCell id="edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="failure" target="unit-tests">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Labels -->
+        <mxCell id="label-yes" value="YES" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="660" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-no" value="NO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="660" width="40" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
