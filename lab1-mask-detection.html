@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Руководство по системной инженерии</title>
-        <meta name="robots" content="noindex">
+        <title>Лабораторная работа №1: Система контроля СИЗ (Mask Detection) - Руководство по системной инженерии</title>
 
 
         <!-- Custom HTML head -->
@@ -177,372 +176,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="md-example"><a class="header" href="#md-example">MD Example</a></h1>
-<h3 id="Структура-проекта"><a class="header" href="#Структура-проекта">Структура проекта</a></h3>
-<ul>
-<li><code>src/</code> - основная директория с контентом
-<ul>
-<li><code>SUMMARY.md</code> - файл навигации/оглавления</li>
-<li>Все остальные <code>.md</code> файлы - страницы документации</li>
-</ul>
-</li>
-</ul>
-<h3 id="Расположение-файлов"><a class="header" href="#Расположение-файлов">Расположение файлов</a></h3>
-<ul>
-<li>Все Markdown файлы должны находиться в директории <code>src/</code>. Рекомендуется ссылаться на md файлы из SUMMARY.md (см. пример в SUMMARY.md).</li>
-<li>Изображения и другие ресурсы рекомендуется хранить в релеватных папках <code>src/images</code>, <code>src/diagrams</code> и тд.</li>
-</ul>
-<h3 id="Локальная-разработка"><a class="header" href="#Локальная-разработка">Локальная разработка</a></h3>
-<ol>
-<li>Установите MDBook <a href="https://rust-lang.github.io/mdBook/guide/installation.html">инструкция</a></li>
-<li>Запустите сервер разработки:</li>
-</ol>
-<pre><code class="language-bash">mdbook serve --open
-</code></pre>
-<ol start="3">
-<li>Откройте http://localhost:3000 в браузере.</li>
-</ol>
-<h3 id="Конфигурация-репозитория"><a class="header" href="#Конфигурация-репозитория">Конфигурация репозитория</a></h3>
-<ol>
-<li>Сделайте fork репозитория <a href="https://github.com/Jho00/system-engineering-playbook">mdb</a></li>
-<li>Перейдите в настройки своего github репозитория. Выберите вкладку Actions -&gt; General. Установите "Read and write permissions" в категории Workflow permissions</li>
-</ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="drawio-example"><a class="header" href="#drawio-example">Drawio Example</a></h1>
-<h3 id="Создание-диаграммы"><a class="header" href="#Создание-диаграммы">Создание диаграммы</a></h3>
-<ol>
-<li>Создайте диаграмму используя <a href="https://app.diagrams.net/">draw.io</a></li>
-<li>Сохраните файл в формате <code>.drawio</code> в проект</li>
-<li>Добавьте файл в индексацию git и отправьте в github репозиторий</li>
-</ol>
-<h3 id="Добавление-диаграммы-в-документацию"><a class="header" href="#Добавление-диаграммы-в-документацию">Добавление диаграммы в документацию</a></h3>
-<p>Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.</p>
-<iframe class="drawio-viewer" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=diagram&url=https://raw.githubusercontent.com/bndroll/mdb/master/src/diagrams/qwe.drawio"></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="swagger-example"><a class="header" href="#swagger-example">Swagger Example</a></h1>
-<h3 id="Подготовка-swagger-спецификации"><a class="header" href="#Подготовка-swagger-спецификации">Подготовка Swagger-спецификации</a></h3>
-<ol>
-<li>Создайте файл спецификации API в формате YAML</li>
-<li>Сохраните файл как <code>swagger.yaml</code> в директорию <code>src/swagger/</code></li>
-<li>Убедитесь, что спецификация соответствует стандарту OpenAPI 3.0</li>
-</ol>
-<h3 id="Вставка-спецификации-в-документацию"><a class="header" href="#Вставка-спецификации-в-документацию">Вставка спецификации в документацию</a></h3>
-<p>Для вставки спецификации в документацию используйте синтаксис из примера ниже.</p>
-<iframe src="swagger/swagger.html" width="100%" height="1500px" style="border:0;" allowfullscreen="allowfullscreen"></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="ТЕСТ-Тестовый-отчет---Документация-системного-тестирования"><a class="header" href="#ТЕСТ-Тестовый-отчет---Документация-системного-тестирования">(ТЕСТ) Тестовый отчет - Документация системного тестирования</a></h1>
-<h2 id="Обзор"><a class="header" href="#Обзор">Обзор</a></h2>
-<p>Данный тестовый отчет предоставляет комплексную документацию по активностям системного тестирования, включая тестовые сценарии, результаты и визуальное представление тестовых данных.</p>
-<hr />
-<h2 id="Схема-выполнения-тестов"><a class="header" href="#Схема-выполнения-тестов">Схема выполнения тестов</a></h2>
-<p>Диаграмма ниже иллюстрирует полный процесс выполнения тестов от начала до конца:</p>
-<p>@drawio{diagrams/test-flow.drawio}</p>
-<hr />
-<h2 id="Тестовое-окружение"><a class="header" href="#Тестовое-окружение">Тестовое окружение</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody>
-<tr><td>Тестовое окружение</td><td>Staging</td></tr>
-<tr><td>Дата тестирования</td><td>19 октября 2025</td></tr>
-<tr><td>Тестировщик</td><td>Команда QA</td></tr>
-<tr><td>Версия системы</td><td>v2.3.1</td></tr>
-<tr><td>Версия БД</td><td>PostgreSQL 15.2</td></tr>
-</tbody></table>
-</div>
-<hr />
-<h2 id="Сводка-по-покрытию-тестами"><a class="header" href="#Сводка-по-покрытию-тестами">Сводка по покрытию тестами</a></h2>
-<h3 id="Общая-статистика-тестирования"><a class="header" href="#Общая-статистика-тестирования">Общая статистика тестирования</a></h3>
-<p><img src="img/img.png" alt="img.png" /></p>
-<p><strong>Ключевые метрики:</strong></p>
-<ul>
-<li>Всего тест-кейсов: 156</li>
-<li>Пройдено: 142 (91%)</li>
-<li>Провалено: 8 (5%)</li>
-<li>Заблокировано: 6 (4%)</li>
-<li>Покрытие тестами: 87%</li>
-</ul>
-<hr />
-<h2 id="Результаты-функционального-тестирования"><a class="header" href="#Результаты-функционального-тестирования">Результаты функционального тестирования</a></h2>
-<h3 id="1-Модуль-аутентификации-пользователей"><a class="header" href="#1-Модуль-аутентификации-пользователей">1. Модуль аутентификации пользователей</a></h3>
-<p><strong>Выполнено тест-кейсов:</strong> 24</p>
-<p><img src="img/img1.png" alt="img1.png" /></p>
-<h4 id="Результаты-тестирования"><a class="header" href="#Результаты-тестирования">Результаты тестирования:</a></h4>
-<ul>
-<li>✅ Вход с корректными учетными данными: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Вход с некорректными учетными данными: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Функционал восстановления пароля: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Двухфакторная аутентификация: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Обработка истечения сессии: <strong>ПРОЙДЕН</strong></li>
-<li>❌ OAuth интеграция (Google): <strong>ПРОВАЛЕН</strong> - Проблема с обновлением токена</li>
-<li>✅ Контроль доступа на основе ролей: <strong>ПРОЙДЕН</strong></li>
-</ul>
-<p><strong>Обнаруженные проблемы:</strong></p>
-<ul>
-<li>Баг #1247: Ошибка обновления OAuth токена через 30 минут</li>
-<li>Улучшение #1248: Добавить поддержку биометрической аутентификации</li>
-</ul>
-<hr />
-<h3 id="2-Конвейер-обработки-данных"><a class="header" href="#2-Конвейер-обработки-данных">2. Конвейер обработки данных</a></h3>
-<p><strong>Выполнено тест-кейсов:</strong> 42</p>
-<p><img src="img/img2.png" alt="img2.png" /></p>
-<h4 id="Результаты-тестирования-1"><a class="header" href="#Результаты-тестирования-1">Результаты тестирования:</a></h4>
-<ul>
-<li>✅ Получение данных из множественных источников: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Трансформация и валидация данных: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Обработка ошибок и механизм повторных попыток: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Производительность под нагрузкой (1000 запр/сек): <strong>ПРОЙДЕН</strong></li>
-<li>❌ Обработка больших файлов (&gt;5ГБ): <strong>ПРОВАЛЕН</strong> - Переполнение памяти</li>
-<li>✅ Проверка консистентности данных: <strong>ПРОЙДЕН</strong></li>
-</ul>
-<p><strong>Метрики производительности:</strong></p>
-<pre><code>Среднее время обработки: 245мс
-Пиковое использование памяти: 4.2ГБ
-Пропускная способность: 850 записей/сек
-Процент ошибок: 0.3%
-</code></pre>
-<hr />
-<h3 id="3-Тестирование-интеграции-api"><a class="header" href="#3-Тестирование-интеграции-api">3. Тестирование интеграции API</a></h3>
-<p><strong>Выполнено тест-кейсов:</strong> 38</p>
-<p><img src="img/img3.png" alt="img3.png" /></p>
-<h4 id="rest-api-эндпоинты"><a class="header" href="#rest-api-эндпоинты">REST API эндпоинты:</a></h4>
-<ul>
-<li>✅ GET /api/v1/users: <strong>ПРОЙДЕН</strong></li>
-<li>✅ POST /api/v1/users: <strong>ПРОЙДЕН</strong></li>
-<li>✅ PUT /api/v1/users/{id}: <strong>ПРОЙДЕН</strong></li>
-<li>✅ DELETE /api/v1/users/{id}: <strong>ПРОЙДЕН</strong></li>
-<li>✅ GET /api/v1/reports: <strong>ПРОЙДЕН</strong></li>
-<li>❌ POST /api/v1/reports/export: <strong>ПРОВАЛЕН</strong> - Таймаут на больших наборах данных</li>
-<li>✅ Время отклика &lt; 200мс: <strong>ПРОЙДЕН</strong></li>
-</ul>
-<p><strong>Производительность API:</strong></p>
-<pre><code class="language-json">{
-  "среднее_время_отклика": "156мс",
-  "p95_время_отклика": "320мс",
-  "p99_время_отклика": "450мс",
-  "процент_ошибок": "0.2%",
-  "запросов_в_секунду": 1250
-}
-</code></pre>
-<hr />
-<h2 id="Нагрузочное-тестирование"><a class="header" href="#Нагрузочное-тестирование">Нагрузочное тестирование</a></h2>
-<h3 id="Результаты-нагрузочного-тестирования"><a class="header" href="#Результаты-нагрузочного-тестирования">Результаты нагрузочного тестирования</a></h3>
-<p><img src="img/img4.png" alt="img4.png" /></p>
-<p><strong>Конфигурация теста:</strong></p>
-<ul>
-<li>Длительность: 2 часа</li>
-<li>Одновременные пользователи: 500 → 5000 (постепенное увеличение)</li>
-<li>Всего запросов: 2,450,000</li>
-</ul>
-<p><strong>Результаты:</strong></p>
-<div class="table-wrapper"><table><thead><tr><th>Метрика</th><th>Цель</th><th>Фактически</th><th>Статус</th></tr></thead><tbody>
-<tr><td>Время отклика (среднее)</td><td>&lt; 300мс</td><td>245мс</td><td>✅ ПРОЙДЕН</td></tr>
-<tr><td>Время отклика (p95)</td><td>&lt; 500мс</td><td>420мс</td><td>✅ ПРОЙДЕН</td></tr>
-<tr><td>Процент ошибок</td><td>&lt; 1%</td><td>0.3%</td><td>✅ ПРОЙДЕН</td></tr>
-<tr><td>Пропускная способность</td><td>&gt; 1000 запр/с</td><td>1250 запр/с</td><td>✅ ПРОЙДЕН</td></tr>
-<tr><td>Использование CPU</td><td>&lt; 80%</td><td>68%</td><td>✅ ПРОЙДЕН</td></tr>
-<tr><td>Использование памяти</td><td>&lt; 85%</td><td>72%</td><td>✅ ПРОЙДЕН</td></tr>
-</tbody></table>
-</div>
-<hr />
-<h3 id="Результаты-стресс-тестирования"><a class="header" href="#Результаты-стресс-тестирования">Результаты стресс-тестирования</a></h3>
-<p><img src="img/img5.png" alt="img5.png" /></p>
-<p><strong>Анализ точки отказа:</strong></p>
-<ul>
-<li>Система оставалась стабильной до 8,000 одновременных пользователей</li>
-<li>Деградация отклика началась при 9,500 пользователях</li>
-<li>Отказ системы произошел при 12,000 одновременных пользователях</li>
-</ul>
-<p><strong>Рекомендации:</strong></p>
-<ol>
-<li>Внедрить горизонтальное масштабирование для нагрузки &gt; 8,000 пользователей</li>
-<li>Оптимизировать пулинг соединений с БД</li>
-<li>Добавить слой кеширования для часто запрашиваемых данных</li>
-</ol>
-<hr />
-<h2 id="Тестирование-безопасности"><a class="header" href="#Тестирование-безопасности">Тестирование безопасности</a></h2>
-<h3 id="Оценка-уязвимостей"><a class="header" href="#Оценка-уязвимостей">Оценка уязвимостей</a></h3>
-<p><img src="img/img6.png" alt="img6.png" /></p>
-<p><strong>Выполненные тесты безопасности:</strong></p>
-<ul>
-<li>✅ Тестирование SQL инъекций: <strong>ПРОЙДЕН</strong> - Уязвимостей не обнаружено</li>
-<li>✅ XSS (Межсайтовый скриптинг): <strong>ПРОЙДЕН</strong> - Санитизация работает</li>
-<li>✅ CSRF защита: <strong>ПРОЙДЕН</strong> - Токены корректно реализованы</li>
-<li>✅ Попытки обхода аутентификации: <strong>ПРОЙДЕН</strong> - Все заблокированы</li>
-<li>⚠️ Ограничение частоты запросов: <strong>ЧАСТИЧНО</strong> - Требуются более строгие лимиты на эндпоинт входа</li>
-<li>✅ Шифрование данных (при передаче): <strong>ПРОЙДЕН</strong> - TLS 1.3</li>
-<li>✅ Шифрование данных (в покое): <strong>ПРОЙДЕН</strong> - AES-256</li>
-</ul>
-<p><strong>Оценка безопасности:</strong> 95/100</p>
-<hr />
-<h2 id="Интеграционное-тестирование"><a class="header" href="#Интеграционное-тестирование">Интеграционное тестирование</a></h2>
-<h3 id="Схема-тестирования-системной-архитектуры"><a class="header" href="#Схема-тестирования-системной-архитектуры">Схема тестирования системной архитектуры</a></h3>
-<p>Следующая диаграмма иллюстрирует полный поток интеграционных тестов всех системных компонентов:</p>
-<p><strong>Интеграция компонентов:</strong></p>
-<ol>
-<li>Frontend ↔ API Gateway</li>
-<li>API Gateway ↔ Микросервисы</li>
-<li>Микросервисы ↔ Слой базы данных</li>
-<li>Интеграция очереди сообщений</li>
-<li>Интеграция внешних сервисов</li>
-</ol>
-<p><strong>Результаты интеграционного тестирования:</strong></p>
-<ul>
-<li>✅ Сквозной пользовательский workflow: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Взаимодействие между сервисами: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Обработка транзакций БД: <strong>ПРОЙДЕН</strong></li>
-<li>✅ Надежность очереди сообщений: <strong>ПРОЙДЕН</strong></li>
-<li>❌ Обработка таймаутов сторонних API: <strong>ПРОВАЛЕН</strong> - Требуется circuit breaker</li>
-</ul>
-<hr />
-<h2 id="Регрессионное-тестирование"><a class="header" href="#Регрессионное-тестирование">Регрессионное тестирование</a></h2>
-<p><strong>Набор тестов:</strong> Полный набор регрессионных тестов (125 тест-кейсов)</p>
-<p><strong>Результаты:</strong></p>
-<ul>
-<li>Пройдено: 119 (95%)</li>
-<li>Провалено: 3 (2.4%)</li>
-<li>Заблокировано: 3 (2.4%)</li>
-</ul>
-<p><strong>Проваленные тест-кейсы:</strong></p>
-<ol>
-<li><strong>TC-REG-045</strong>: Загрузка изображения профиля падает для изображений &gt; 10МБ</li>
-<li><strong>TC-REG-078</strong>: Таймаут функционала экспорта для отчетов с &gt; 100к строк</li>
-<li><strong>TC-REG-112</strong>: Задержка email уведомлений для массовых операций</li>
-</ol>
-<hr />
-<h2 id="Тестирование-совместимости-с-браузерами"><a class="header" href="#Тестирование-совместимости-с-браузерами">Тестирование совместимости с браузерами</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Браузер</th><th>Версия</th><th>Статус</th><th>Проблемы</th></tr></thead><tbody>
-<tr><td>Chrome</td><td>118+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
-<tr><td>Firefox</td><td>119+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
-<tr><td>Safari</td><td>16+</td><td>✅ ПРОЙДЕН</td><td>Мелкие проблемы с CSS</td></tr>
-<tr><td>Edge</td><td>118+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
-<tr><td>Opera</td><td>104+</td><td>✅ ПРОЙДЕН</td><td>Нет</td></tr>
-</tbody></table>
-</div>
-<hr />
-<h2 id="Тестирование-мобильной-адаптивности"><a class="header" href="#Тестирование-мобильной-адаптивности">Тестирование мобильной адаптивности</a></h2>
-<p><strong>Протестированные устройства:</strong></p>
-<ul>
-<li>iPhone 14 Pro (iOS 17.1) - ✅ ПРОЙДЕН</li>
-<li>Samsung Galaxy S23 (Android 14) - ✅ ПРОЙДЕН</li>
-<li>iPad Pro 12.9" (iOS 17.1) - ✅ ПРОЙДЕН</li>
-<li>Google Pixel 8 (Android 14) - ✅ ПРОЙДЕН</li>
-</ul>
-<hr />
-<h2 id="Известные-проблемы"><a class="header" href="#Известные-проблемы">Известные проблемы</a></h2>
-<h3 id="Критические-проблемы"><a class="header" href="#Критические-проблемы">Критические проблемы</a></h3>
-<ol>
-<li>
-<p><strong>БАГ-1247</strong>: Ошибка обновления OAuth токена</p>
-<ul>
-<li><strong>Приоритет:</strong> Высокий</li>
-<li><strong>Назначено:</strong> Backend команде</li>
-<li><strong>Срок:</strong> 25 октября 2025</li>
-</ul>
-</li>
-<li>
-<p><strong>БАГ-1249</strong>: Переполнение памяти при обработке больших файлов</p>
-<ul>
-<li><strong>Приоритет:</strong> Высокий</li>
-<li><strong>Назначено:</strong> Команде данных</li>
-<li><strong>Срок:</strong> 28 октября 2025</li>
-</ul>
-</li>
-</ol>
-<h3 id="Проблемы-среднего-приоритета"><a class="header" href="#Проблемы-среднего-приоритета">Проблемы среднего приоритета</a></h3>
-<ol>
-<li><strong>БАГ-1248</strong>: Требуется улучшение ограничения частоты запросов</li>
-<li><strong>БАГ-1250</strong>: Таймаут экспорта на больших наборах данных</li>
-<li><strong>БАГ-1251</strong>: Требуется circuit breaker для сторонних API</li>
-</ol>
-<hr />
-<h2 id="Рекомендации"><a class="header" href="#Рекомендации">Рекомендации</a></h2>
-<ol>
-<li>
-<p><strong>Оптимизация производительности:</strong></p>
-<ul>
-<li>Внедрить Redis кеширование для часто запрашиваемых данных</li>
-<li>Оптимизировать запросы к БД с правильными индексами</li>
-<li>Включить HTTP/2 для лучшей производительности</li>
-</ul>
-</li>
-<li>
-<p><strong>Масштабируемость:</strong></p>
-<ul>
-<li>Внедрить автомасштабирование подов</li>
-<li>Добавить балансировку нагрузки для микросервисов</li>
-<li>Настроить CDN для статических ресурсов</li>
-</ul>
-</li>
-<li>
-<p><strong>Безопасность:</strong></p>
-<ul>
-<li>Усилить ограничение частоты запросов на эндпоинтах аутентификации</li>
-<li>Внедрить Web Application Firewall (WAF)</li>
-<li>Регулярные аудиты безопасности и пентесты</li>
-</ul>
-</li>
-<li>
-<p><strong>Мониторинг:</strong></p>
-<ul>
-<li>Улучшить мониторинг приложения с распределенной трассировкой</li>
-<li>Настроить оповещения в реальном времени для критических метрик</li>
-<li>Внедрить агрегацию и анализ логов</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h2 id="Статус-автоматизации-тестов"><a class="header" href="#Статус-автоматизации-тестов">Статус автоматизации тестов</a></h2>
-<p><strong>Автоматизированные тесты:</strong> 142/156 (91%)</p>
-<p><strong>Фреймворк автоматизации:</strong></p>
-<ul>
-<li>Модульные тесты: Jest + Mocha</li>
-<li>Интеграционные тесты: Supertest</li>
-<li>E2E тесты: Cypress + Playwright</li>
-<li>Нагрузочные тесты: K6 + JMeter</li>
-</ul>
-<p><strong>Интеграция CI/CD:</strong></p>
-<ul>
-<li>✅ Автоматическое выполнение тестов при каждом коммите</li>
-<li>✅ Автоматический деплой в staging при мердже PR</li>
-<li>✅ Автоматический откат при провале тестов</li>
-<li>✅ Обнаружение регрессии производительности</li>
-</ul>
-<hr />
-<h2 id="Заключение"><a class="header" href="#Заключение">Заключение</a></h2>
-<p>Система продемонстрировала <strong>высокую общую стабильность</strong> с уровнем прохождения тестов 91% по всем категориям. Хотя есть несколько проблем, требующих внимания (в частности OAuth интеграция и обработка больших файлов), основной функционал соответствует критериям приемки.</p>
-<p><strong>Общий статус тестирования:</strong> ✅ <strong>ГОТОВО К ПРОДАКШЕНУ</strong> (с отмеченными оговорками)</p>
-<p><strong>Подтверждение:</strong></p>
-<ul>
-<li>Руководитель QA: _________________ Дата: __________</li>
-<li>Руководитель разработки: _________________ Дата: __________</li>
-<li>Владелец продукта: ____________ Дата: __________</li>
-</ul>
-<hr />
-<h2 id="Приложение"><a class="header" href="#Приложение">Приложение</a></h2>
-<h3 id="Тестовые-данные"><a class="header" href="#Тестовые-данные">Тестовые данные</a></h3>
-<p><strong>Примеры тестовых пользователей:</strong></p>
-<ul>
-<li>test_user_001@example.com</li>
-<li>test_admin_001@example.com</li>
-<li>test_viewer_001@example.com</li>
-</ul>
-<p><strong>Тестовая база данных:</strong></p>
-<ul>
-<li>Имя: test_db_staging</li>
-<li>Записей: 1,000,000+</li>
-<li>Размер: 12.5 ГБ</li>
-</ul>
-<p><strong>Тестовые окружения:</strong></p>
-<ul>
-<li>Staging: https://staging.example.com</li>
-<li>QA: https://qa.example.com</li>
-<li>Performance: https://perf.example.com</li>
-</ul>
-<hr />
-<p><em>Это тестовый отчет, созданный в демонстрационных целях.</em></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты"><a class="header" href="#Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты">Лабораторная работа №1: Система контроля средств индивидуальной защиты</a></h1>
+                        <h1 id="Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты"><a class="header" href="#Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты">Лабораторная работа №1: Система контроля средств индивидуальной защиты</a></h1>
 <h2 id="Оглавление"><a class="header" href="#Оглавление">Оглавление</a></h2>
 <ul>
-<li><a href="lab1-mask-detection.html#%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Задачи системы</a></li>
-<li><a href="lab1-mask-detection.html#%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B8-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Целевая аудитория и области применения</a></li>
-<li><a href="lab1-mask-detection.html#%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%81%D1%82%D1%8D%D0%BA">Технологический стэк</a></li>
-<li><a href="lab1-mask-detection.html#%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F-%D1%81%D0%B8%D0%B7-%D0%B8-%D0%B8%D1%85-%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%83">Требования системы контроля СИЗ и их влияние на архитектуру</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%81%D0%B5%D1%82%D0%B8">Архитектура нейронной сети</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8">Источники</a></li>
+<li><a href="#%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
+<li><a href="#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Задачи системы</a></li>
+<li><a href="#%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B8-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Целевая аудитория и области применения</a></li>
+<li><a href="#%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%81%D1%82%D1%8D%D0%BA">Технологический стэк</a></li>
+<li><a href="#%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F-%D1%81%D0%B8%D0%B7-%D0%B8-%D0%B8%D1%85-%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%83">Требования системы контроля СИЗ и их влияние на архитектуру</a></li>
+<li><a href="#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%81%D0%B5%D1%82%D0%B8">Архитектура нейронной сети</a></li>
+<li><a href="#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8">Источники</a></li>
 </ul>
 <hr />
 <h2 id="Введение"><a class="header" href="#Введение">Введение</a></h2>
@@ -889,7 +532,7 @@ faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 </tbody></table>
 </div>
 <hr />
-<h2 id="Заключение-1"><a class="header" href="#Заключение-1">Заключение</a></h2>
+<h2 id="Заключение"><a class="header" href="#Заключение">Заключение</a></h2>
 <p>Для системы автоматического контроля СИЗ архитектура <strong>MobileNetV2</strong> демонстрирует наилучший баланс между:</p>
 <ul>
 <li>Точностью обнаружения</li>
@@ -951,6 +594,9 @@ faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="test-report.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -959,6 +605,9 @@ faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="test-report.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 
@@ -982,11 +631,6 @@ faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
         <!-- Custom JS scripts -->
 
-        <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
 
 
     </div>
