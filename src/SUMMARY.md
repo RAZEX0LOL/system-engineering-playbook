@@ -7,6 +7,17 @@
 # Лабораторные работы
 
 - [Лабораторная работа №1: Система контроля СИЗ](./lab1-mask-detection.md)
+  - [Введение](./lab1/intro.md)
+  - [Задачи системы](./lab1/tasks.md)
+  - [Целевая аудитория](./lab1/audience.md)
+  - [Технологический стэк](./lab1/tech-stack.md)
+  - [Требования системы](./lab1/requirements.md)
+  - [Архитектура нейронной сети](./lab1/architecture.md)
+  - [Сравнение архитектур](./lab1/comparison.md)
+  - [Реализация интерфейса](./lab1/interface.md)
+  - [Показатели эффективности](./lab1/performance.md)
+  - [Заключение](./lab1/conclusion.md)
+  - [Источники](./lab1/sources.md)
 
 ---
 
