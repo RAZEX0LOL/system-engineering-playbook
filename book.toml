@@ -17,3 +17,22 @@ additional-css = ["src/_assets/custom.css"]
 additional-js = []
 default-theme = "navy"
 preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/your-username/system-engineering-playbook"
+git-repository-icon = "fa-github"
+
+# Включить автоматическую навигацию по заголовкам справа
+[output.html.fold]
+enable = false
+level = 0
+
+# Настройки поиска
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
