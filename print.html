@@ -207,21 +207,12 @@
 <li>Сделайте fork репозитория <a href="https://github.com/Jho00/system-engineering-playbook">mdb</a></li>
 <li>Перейдите в настройки своего github репозитория. Выберите вкладку Actions -&gt; General. Установите "Read and write permissions" в категории Workflow permissions</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты-Проект-mask_detector-в-репозитории"><a class="header" href="#Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты-Проект-mask_detector-в-репозитории">Лабораторная работа №1: Система контроля средств индивидуальной защиты (Проект /mask_detector в репозитории)</a></h1>
-<h2 id="Оглавление"><a class="header" href="#Оглавление">Оглавление</a></h2>
-<ul>
-<li><a href="lab1-mask-detection.html#%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Задачи системы</a></li>
-<li><a href="lab1-mask-detection.html#%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B8-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Целевая аудитория и области применения</a></li>
-<li><a href="lab1-mask-detection.html#%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%81%D1%82%D1%8D%D0%BA">Технологический стэк</a></li>
-<li><a href="lab1-mask-detection.html#%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F-%D1%81%D0%B8%D0%B7-%D0%B8-%D0%B8%D1%85-%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%83">Требования системы контроля СИЗ и их влияние на архитектуру</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%81%D0%B5%D1%82%D0%B8">Архитектура нейронной сети</a></li>
-<li><a href="lab1-mask-detection.html#%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81-%D0%B0%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%BC%D0%B8-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8">Сравнение с альтернативными архитектурами</a></li>
-<li><a href="lab1-mask-detection.html#%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0">Реализация пользовательского интерфейса</a></li>
-<li><a href="lab1-mask-detection.html#%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8">Показатели эффективности обученной модели</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B7%D0%B0%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5">Заключение</a></li>
-<li><a href="lab1-mask-detection.html#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8">Источники</a></li>
-</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты"><a class="header" href="#Лабораторная-работа-1-Система-контроля-средств-индивидуальной-защиты">Лабораторная работа №1: Система контроля средств индивидуальной защиты</a></h1>
+<blockquote>
+<p><strong>Проект:</strong> Реализация доступна в репозитории <code>/mask_detector</code></p>
+<p><strong>Навигация:</strong> Используйте боковую панель слева для перехода между разделами документа</p>
+<p><strong>Визуализация:</strong> Все диаграммы и графики доступны в разделе <a href="attachments.html">Приложения: Диаграммы и графики</a></p>
+</blockquote>
 <hr />
 <h2 id="Введение"><a class="header" href="#Введение">Введение</a></h2>
 <p>Данная документация описывает систему для автоматического мониторинга использования средств индивидуальной защиты органов дыхания в реальном времени с помощью алгоритмов компьютерного зрения.</p>
@@ -353,6 +344,9 @@ headModel = Dense(2, activation="softmax")(headModel)
 </tbody></table>
 </div>
 <p>Данная архитектура обеспечивает баланс между точностью классификации и производительностью, что критически важно для систем реального времени.</p>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%81%D0%B5%D1%82%D0%B8">Диаграмма архитектуры нейронной сети</a> - подробная схема всех слоев и параметров модели.</p>
+</blockquote>
 <p><strong>Преимущества для проекта СИЗ:</strong></p>
 <ul>
 <li>Обучение за часы, а не недели</li>
@@ -421,6 +415,9 @@ Vision Transformers адаптируют архитектуру трансфор
 <tr><td><strong>Vision Transformer</strong></td><td>Разбиение изображения на патчи, обработка последовательности патчей энкодером Transformer со self-attention.</td><td>Точность: Сопоставима с лучшими CNN-моделями (например, достигает парето-оптимальности по точности и скорости) [6]<br>Параметры: Модели могут быть очень большими, например, ViT-Huge содержит 632 млн параметров [7]</td><td>Глобальный контекст изображения, перспективная архитектура.</td><td>Экспериментальная технология. Непрактична для реальных систем из-за высоких требований к данным и вычислителям.</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80">Сравнение архитектур</a> - комплексное сравнение по точности, количеству параметров, времени вывода и коэффициенту эффективности.</p>
+</blockquote>
 <h2 id="Реализация-пользовательского-интерфейса"><a class="header" href="#Реализация-пользовательского-интерфейса">Реализация пользовательского интерфейса</a></h2>
 <h3 id="Архитектура-приложения"><a class="header" href="#Архитектура-приложения">Архитектура приложения</a></h3>
 <p>Система реализована в виде десктопного приложения с графическим интерфейсом на базе библиотеки Tkinter. Приложение обеспечивает интеграцию детекции лиц и классификации масок в реальном времени с визуализацией результатов.</p>
@@ -535,6 +532,9 @@ except Exception as e:
 <li>Логирование событий для аудита</li>
 <li>Отправка уведомлений при обнаружении нарушений</li>
 </ul>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Рабочий процесс системы</a> - подробная диаграмма потока данных от захвата видео до отображения результатов.</p>
+</blockquote>
 <h2 id="Показатели-эффективности-обученной-модели"><a class="header" href="#Показатели-эффективности-обученной-модели">Показатели эффективности обученной модели</a></h2>
 <p>Данный раздел представляет результаты обучения модели MobileNetV2 для конкретной задачи детекции масок на лицах.</p>
 <h3 id="Метрики-качества-модели"><a class="header" href="#Метрики-качества-модели">Метрики качества модели</a></h3>
@@ -549,12 +549,21 @@ except Exception as e:
 <tr><td><strong>FPS</strong></td><td>40-60 fps</td><td>Частота кадров при обработке видеопотока в реальном времени</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8">График обучения модели</a> - динамика изменения точности и функции потерь по эпохам.</p>
+</blockquote>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Панель показателей эффективности</a> - комплексная dashboard с ключевыми метриками производительности.</p>
+</blockquote>
 <h3 id="confusion-matrix-Матрица-ошибок"><a class="header" href="#confusion-matrix-Матрица-ошибок">Confusion Matrix (Матрица ошибок)</a></h3>
 <div class="table-wrapper"><table><thead><tr><th></th><th>Predicted: Mask</th><th>Predicted: No Mask</th></tr></thead><tbody>
 <tr><td><strong>Actual: Mask</strong></td><td>487 (True Positive)</td><td>6 (False Negative)</td></tr>
 <tr><td><strong>Actual: No Mask</strong></td><td>7 (False Positive)</td><td>500 (True Negative)</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="attachments.html#%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA">Матрица ошибок</a> - визуализация результатов классификации с детальной статистикой.</p>
+</blockquote>
 <h3 id="Анализ-результатов"><a class="header" href="#Анализ-результатов">Анализ результатов</a></h3>
 <p><strong>Преимущества достигнутых показателей:</strong></p>
 <ul>
