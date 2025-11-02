@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Сравнение архитектур - Руководство по системной инженерии</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../src/_assets/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Руководство по системной инженерии</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/your-username/system-engineering-playbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Сравнение-с-альтернативными-архитектурами"><a class="header" href="#Сравнение-с-альтернативными-архитектурами">Сравнение с альтернативными архитектурами</a></h1>
+<p>Для системы автоматического контроля средств индивидуальной защиты (СИЗ) требуется архитектура, обеспечивающая оптимальный баланс между точностью, скоростью работы и эффективностью на edge-устройствах. Проведем анализ современных архитектур на основе актуальных научных исследований.</p>
+<h2 id="1-mobilenetv2---текущий-выбор"><a class="header" href="#1-mobilenetv2---текущий-выбор">1. MobileNetV2 - текущий выбор</a></h2>
+<p>MobileNetV2 представляет собой сверточную нейронную сеть, основанную на архитектуре с инвертированными остаточными блоками (inverted residuals) и линейными бутылочными горлышками (linear bottlenecks). Ключевые особенности архитектуры включают использование depthwise separable convolutions для снижения вычислительной сложности, а также механизм расширения и сжатия каналов в остаточных блоках. Сеть оптимизирована для работы на мобильных и edge-устройствах при сохранении конкурентной точности.</p>
+<p><strong>Преимущества для детекции СИЗ:</strong></p>
+<ul>
+<li>
+<p><strong>Проверенная эффективность в реальных системах мониторинга</strong>
+Согласно исследованию 2025 года, архитектура MobileNetV2 в связке с SSD демонстрирует высокую эффективность для задач автоматизированного мониторинга, достигая показателя точности 87.4% mAP. Это подтверждает пригодность архитектуры для развертывания в реальных системах с ограниченными вычислительными ресурсами, что характерно для систем контроля СИЗ [1].</p>
+</li>
+<li>
+<p><strong>Высокая точность в требовательных приложениях</strong>
+В исследовании 2024 года модифицированная архитектура MobileNetV2 показала точность 97.73% при классификации медицинских изображений, что доказывает ее способность решать сложные задачи визуального распознавания даже в таких критически важных областях, как медицинская диагностика [2].</p>
+</li>
+<li>
+<p><strong>Эффективность работы с ограниченными данными</strong>
+Исследование 2025 года подтверждает исключительную эффективность MobileNetV2 при работе с небольшими наборами данных. Архитектура позволяет достигать точности 98.6% в задачах тонкой классификации, что особенно важно для систем распознавания СИЗ, где сбор больших размеченных datasets часто затруднен [3].</p>
+</li>
+<li>
+<p><strong>Оптимизация производительности</strong>
+Тот же источник [3] отмечает, что оптимизированные реализации MobileNetV2 позволяют сократить время обучения на 50-70% и время вывода на 10% по сравнению с базовой версией, что обеспечивает экономическую эффективность и практическую применимость системы.</p>
+</li>
+<li>
+<p><strong>Подтвержденная надежность архитектуры</strong>
+Современные научные работы 2024-2025 годов продолжают активно использовать MobileNetV2 в прикладных решениях для edge-устройств, что свидетельствует о сохранении актуальности и надежности данной архитектуры для промышленного применения [1,2,3].</p>
+</li>
+</ul>
+<h2 id="2-mobilenetv3-large"><a class="header" href="#2-mobilenetv3-large">2. MobileNetV3 Large</a></h2>
+<p><strong>Архитектурное описание:</strong>
+MobileNetV3 Large представляет собой крупномасштабную версию архитектуры MobileNetV3, разработанную с применением нейроархитектурного поиска (NAS). Модель сохраняет базовые принципы MobileNetV2, включая inverted residuals и linear bottlenecks, но дополнена squeeze-and-excitation блоками и оптимизированными активационными функциями h-swish. Архитектура ориентирована на достижение максимальной точности при сохранении приемлемой производительности на мобильных устройствах.</p>
+<h2 id="3-mobilenetv3-small"><a class="header" href="#3-mobilenetv3-small">3. MobileNetV3 Small</a></h2>
+<p><strong>Архитектурное описание:</strong>
+MobileNetV3 Small является компактной версией архитектуры, оптимизированной для максимального быстродействия и минимального потребления ресурсов. Как и в Large-версии, здесь применяется нейроархитектурный поиск и те же основные структурные элементы, но с уменьшенной шириной сети и оптимизированной конфигурацией блоков. Модель предназначена для приложений с экстремальными ограничениями по вычислительным ресурсам и энергопотреблению.</p>
+<h2 id="4-efficientnet"><a class="header" href="#4-efficientnet">4. EfficientNet</a></h2>
+<p><strong>Архитектурное описание:</strong>
+EfficientNet использует инновационный подход составного масштабирования (compound scaling), равномерно увеличивая глубину, ширину и разрешение входных данных. Архитектура основана на mobile inverted bottleneck convolution (MBConv) - технике, также используемой в MobileNetV2. Систематический подход к масштабированию позволяет достигать высокой точности при оптимальном использовании вычислительных ресурсов, однако требует тщательной настройки гиперпараметров.</p>
+<h2 id="5-vision-transformers"><a class="header" href="#5-vision-transformers">5. Vision Transformers</a></h2>
+<p><strong>Архитектурное описание:</strong>
+Vision Transformers адаптируют архитектуру трансформеров, изначально разработанную для обработки естественного языка, к задачам компьютерного зрения. Основной принцип заключается в разбиении изображения на патчи и обработке их как последовательности данных с помощью механизмов внимания. Архитектура обеспечивает глобальный контекст изображения, но предъявляет высокие требования к вычислительным ресурсам и объему тренировочных данных, что ограничивает ее применение в edge-устройствах.</p>
+<h2 id="Таблица-сравнения-архитектур"><a class="header" href="#Таблица-сравнения-архитектур">Таблица сравнения архитектур</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Архитектура</th><th>Ключевой принцип / Структура</th><th>Показатели эффективности (ImageNet)</th><th>Основные преимущества</th><th>Вывод для системы контроля СИЗ</th></tr></thead><tbody>
+<tr><td><strong>MobileNetV2</strong></td><td>Inverted Residuals с Linear Bottlenecks. Основной блок: слой расширения (pointwise conv), depthwise convolution, слой проекции (pointwise conv, линейная активация). Остаточные связи между bottleneck-слоями.</td><td>Точность Top-1: 71.3%<br>Точность Top-5: 90.1% [5]<br>Параметры: 3.5 млн [5]<br>Время вывода: 25.9 мс [5]<br>mAP: 87.4% (SSD-MobileNetV2) [1]<br>Точность классификации: 97.73% (медицинские изображения) [2]<br>Точность fine-grained: 98.6% [3]</td><td>Проверенная надежность в реальных системах мониторинга [1], высокая точность в критических приложениях [2], эффективность с ограниченными данными [3], низкие требования к ресурсам. Оптимизирована для мобильных устройств [5].</td><td><strong>Оптимальный выбор.</strong> Сочетает достаточную точность с возможностью работы в реальном времени на edge-устройствах. Подтверждена эффективность в промышленных системах контроля [1,2,3].</td></tr>
+<tr><td><strong>MobileNetV3 Large</strong></td><td>Сочетание NAS (Hardware-Aware NAS) и NetAdapt алгоритма с наследием V1/V2. Добавлены Squeeze-and-Excitation блоки и h-swish активация в глубоких слоях.</td><td>Точность Top-1: 75.6% [4]<br>Параметры: 5.4 млн [4]<br>Время вывода: 51.2 мс [4]</td><td>Улучшенная точность классификации, аппаратная оптимизация благодаря автоматизированному поиску архитектуры.</td><td>Альтернатива для задач с повышенными требованиями к точности. Увеличенное время вывода может быть критично для систем реального времени.</td></tr>
+<tr><td><strong>MobileNetV3 Small</strong></td><td>Сочетание NAS (Hardware-Aware NAS) и NetAdapt алгоритма с наследием V1/V2. Добавлены Squeeze-and-Excitation блоки и h-swish активация в глубоких слоях.</td><td>Точность Top-1: 68.1% [4]<br>Параметры: 2.9 млн [4]<br>Время вывода: 15.8 мс [4]</td><td>Максимальная скорость работы, минимальные требования к ресурсам.</td><td>Решение для систем с экстремальными ограничениями по вычислительным ресурсам. Сниженная точность может быть недостаточной для надежного контроля СИЗ.</td></tr>
+<tr><td><strong>EfficientNet</strong></td><td>Compound Scaling: сбалансированное масштабирование глубины, ширины и разрешения изображения.</td><td>Точность Top-1: 77.1% (B0)<br>Точность Top-1: 84.4% (B7)<br>Параметры: ~5.3 млн (B0)</td><td>Системное масштабирование, высокая точность классификации.</td><td>Специализированное решение. Избыточен для большинства задач контроля СИЗ, требует больше ресурсов.</td></tr>
+<tr><td><strong>Vision Transformer</strong></td><td>Разбиение изображения на патчи, обработка последовательности патчей энкодером Transformer со self-attention.</td><td>Точность: Сопоставима с лучшими CNN-моделями (например, достигает парето-оптимальности по точности и скорости) [6]<br>Параметры: Модели могут быть очень большими, например, ViT-Huge содержит 632 млн параметров [7]</td><td>Глобальный контекст изображения, перспективная архитектура.</td><td>Экспериментальная технология. Непрактична для реальных систем из-за высоких требований к данным и вычислителям.</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p><strong>См. визуализацию:</strong> <a href="../attachments.html#%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80">Сравнение архитектур</a> - комплексное сравнение по точности, количеству параметров, времени вывода и коэффициенту эффективности.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../lab1/architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../lab1/interface.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../lab1/architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../lab1/interface.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
